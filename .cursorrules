@@ -1,0 +1,80 @@
+# .cursorrules
+
+project:
+  name: "Starter Kit v4 - Eleventy Blog + Netlify CMS"
+  type: "Kit de Desenvolvimento Inicial para Sites com Blog"
+  purpose: >
+    Servir como base reutilizável e configurada para futuros projetos que incluam blog,
+    CMS via Netlify, e estrutura moderna com Eleventy. Criado para acelerar o início de
+    novos sites para negócios, clientes ou uso pessoal.
+  reusable: true
+
+stack:
+  generator: Eleventy (11ty)
+  templating: Nunjucks
+  css: LESS
+  js: Vanilla JS (ou Alpine.js se necessário)
+  imagem: Plugin eleventy-img para otimização automática
+  cms: Netlify CMS
+  deploy: Netlify
+
+features:
+  - Blog funcional integrado com Netlify CMS
+  - Layouts reutilizáveis (_layouts)
+  - Componentes reutilizáveis (_includes)
+  - Modo Escuro automático com detecção do sistema
+  - Dados globais centralizados (_data/client.js)
+  - Shortcodes para imagens otimizadas (eleventy-img)
+  - Navegação simplificada com Eleventy Navigation
+  - Design responsivo por padrão
+  - Scripts de build configurados
+  - SEO básico incluído
+
+structure:
+  root_files:
+    - .eleventy.js: configurações do Eleventy (layouts, passthrough, imagem, etc)
+    - .gitignore: ignora node_modules e public
+    - package.json: scripts, dependências, metadata
+  folders:
+    - src/
+      - _data: dados globais, ex: client.js
+      - _includes: componentes, ex: header.njk, footer.njk
+      - _layouts: ex: base.njk, blog.njk
+      - admin: ficheiros do Netlify CMS (config.yml, index.html)
+      - assets: js, SVGs, fontes
+      - blog: markdown posts (com frontmatter definido em blog.json)
+      - css: LESS e CSS compilado
+      - images: imagens a otimizar
+      - pages: todas as páginas fora da homepage
+
+conventions:
+  page_naming: kebab-case (ex: sobre-nos.njk)
+  data_naming: camelCase (ex: client.phone, client.email)
+  components: snake_case (ex: hero_section.njk)
+
+style_guide:
+  - Mobile-first, com breakpoints definidos
+  - LESS organizado por variáveis, mixins e layout
+  - Preferência por classes utilitárias
+  - Evitar dependências pesadas (sem Bootstrap)
+  - Usar fontes do Google via fallback local se possível
+
+ai_preferences:
+  tone: técnico, claro e direto
+  verbosity: média
+  recommendations:
+    - Usar práticas de acessibilidade (labels, contrastes, landmarks)
+    - Sugerir shortcodes para imagens otimizadas
+    - Promover modularidade nos layouts e includes
+    - Criar funções utilitárias reutilizáveis (ex: dateFormat, limitText)
+    - Reutilizar layouts e components o máximo possível
+    - Sugerir melhorias de SEO e performance
+
+notes:
+  - Este starterkit já tem CMS e blog configurados.
+  - O kit serve como ponto de partida para qualquer projeto com blog.
+  - Adaptação para cada cliente será feita nos dados globais, layouts e componentes.
+  - Configurações do Netlify CMS estão em /admin/config.yml
+  - Scripts de build e desenvolvimento já estão no package.json
+  - Evitar alterar diretamente /public ou /node_modules
+  - Tudo é feito dentro da pasta /src
