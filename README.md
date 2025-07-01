@@ -1,132 +1,131 @@
 # Starter Kit v4 - Eleventy Blog + Netlify CMS
 
-## Table of Contents
+## Índice
 
-- [Overview](#overview)
-- [Features](#features)
-- [File Structure](#file-structure)
-- [How it Works](#how-it-works)
-- [Using the Kit](#using-the-kit)
-- [Converting a Static Site](#converting-a-static-site)
+- [Visão Geral](#overview)
+- [Funcionalidades](#features)
+- [Estrutura de Ficheiros](#file-structure)
+- [Como Funciona](#how-it-works)
+- [Como Usar o Kit](#using-the-kit)
+- [Converter um Site Estático](#converting-a-static-site)
 - [Blog](#blog)
-- [Things to do before deployment](#pre-deployment-things)
+- [Coisas a fazer antes de publicar](#pre-deployment-things)
 
-# Overview
+# Visão Geral
 <a name="#overview" />
 
-### Introduction
-This kit has everything you need to use the netlify custom CMS to create a blog that can be edited by clients in a nice user-friendly interface from Netlify. We already have all the scripts and configurations to make it work, all you need to do is add it to a site on Netlify, enable Identity, click the button to enable Git Gateway so when the client submits a blog it can push to the repo, and you're done. You can also set the registration to be invite only and add a "sign in with google" button in the options.
+### Introdução
+Este kit tem tudo o que precisa para usar o Netlify CMS personalizado para criar um blog que pode ser editado por clientes numa interface amigável do Netlify. Já tem todos os scripts e configurações prontos a funcionar, só precisa de adicionar o site ao Netlify, ativar o Identity, clicar no botão para ativar o Git Gateway para que, quando o cliente submeter um blog, este seja enviado para o repositório, e está feito. Pode também definir o registo como apenas por convite e adicionar um botão "iniciar sessão com Google" nas opções.
 
-Here's a live demo link of this kit live on Netlify:
+Aqui está um link para uma demonstração ao vivo deste kit no Netlify:
 https://starterkit-v4-eleventy.netlify.app/
 
-### Overview Video
-Here's a little introduction to the new kit to see what’s new:
+### Vídeo de Apresentação
+Aqui está uma pequena introdução ao novo kit para ver o que há de novo:
 <br>
 https://youtu.be/JvEXfQGFKu4
 
-# Features
+# Funcionalidades
 <a name="#features" />
-This starter kit aims to get any project off the ground in as little time as possible. It mimics a premade website, so you can make modifications where needed to get a fully functioning, mostly optimised website in hours. It comes with a fully responsive design by default, and has a few bells and whistles to make for a nicer dev experience.
+Este starter kit tem como objetivo permitir arrancar qualquer projeto no menor tempo possível. Imita um website pré-feito, para que possa fazer modificações onde for necessário e obter um site totalmente funcional e otimizado em poucas horas. Vem com um design totalmente responsivo por defeito e tem algumas funcionalidades extra para uma melhor experiência de desenvolvimento.
 
-Some of those additional features include:
-- **Eleventy** - Eleventy gives you access templating languages within your project. This allows you to supercharge your HTML to allow for reusable components and layouts to keep your code as DRY as possible. The templating language used in this kit is Nunjucks, but eleventy allows you to use multiple at the same time. It also comes with a range of plugins too...
-- **Eleventy Images**. With this plugin, you no longer need to spend hours optimising and reformatting your images. Just use the image shortcode, and eleventy will optimise, compress and convert your image to next-gen formats. Provided you write good code, you can get straight 90+ scores on Lighthouse out-the-box
-- **Eleventy Navigation** - This simplifies the way you do navigations to just 3 lines within the frontmatter of your HTML. All the rest has been done for you.
-- **Centralised Data** - To make it quicker and easier to get started and scale your project, there is a folder containing key information about the client. Should you then later want to change a phone number, address or name, it's all contained in one place.
-- **Netlify CMS** - This starter kit comes with a blog, powered by Netlify CMS. All the config is done for you.
-- **Dark Mode** - With dark mode catching on nowadays, having it on your websites is a nice extra touch you can add. This kit gives you an easy way to add dark styles. What's better, is the users system preferences are taken on first visit, so those who have opted-in to dark mode have that served to them on their first visit.
+Algumas dessas funcionalidades incluem:
+- **Eleventy** - O Eleventy permite-lhe usar linguagens de template no seu projeto. Isto permite-lhe potenciar o seu HTML para componentes reutilizáveis e layouts para manter o código mais limpo. A linguagem de template usada neste kit é Nunjucks, mas o Eleventy permite usar várias ao mesmo tempo. Vem também com vários plugins...
+- **Eleventy Images**. Com este plugin, já não precisa de perder horas a otimizar e reformatar imagens. Basta usar o shortcode de imagem e o Eleventy otimiza, comprime e converte a imagem para formatos modernos. Se escrever bom código, pode obter pontuações de 90+ no Lighthouse logo à partida.
+- **Eleventy Navigation** - Simplifica a criação de navegação para apenas 3 linhas no frontmatter do seu HTML. O resto já está feito.
+- **Dados Centralizados** - Para facilitar e acelerar o início e crescimento do projeto, existe uma pasta com informação chave sobre o cliente. Se mais tarde quiser mudar um número de telefone, morada ou nome, está tudo num só sítio.
+- **Netlify CMS** - Este kit já vem com um blog, alimentado pelo Netlify CMS. Toda a configuração já está feita.
+- **Modo Escuro** - Com o modo escuro a tornar-se comum, tê-lo nos seus sites é um extra interessante. Este kit facilita a adição de estilos escuros. Melhor ainda, as preferências do sistema do utilizador são detetadas na primeira visita, por isso quem já usa modo escuro terá essa versão logo na primeira visita.
 
-If any of the above doesn't make sense, don't worry! It is all explained in the [Get Started]() section. But first, it's best to get acquinted with the structure of the project...
+Se alguma destas funcionalidades não fizer sentido, não se preocupe! Está tudo explicado na secção [Get Started](). Mas primeiro, é melhor conhecer a estrutura do projeto...
 
-
-# File Structure
+# Estrutura de Ficheiros
 <a name="#file-structure" />
-Before diving into the nitty gritty parts of using the kit, it is useful to understand how the project is structured, so you can expand on it in the right way.
+Antes de entrar nos detalhes de como usar o kit, é útil perceber como o projeto está organizado, para poder expandi-lo da melhor forma.
 
 ### root
-At the project root, you will find a couple of folders, .eleventy.js, .gitignore and some package.json files.
+Na raiz do projeto, vai encontrar algumas pastas, o .eleventy.js, .gitignore e alguns ficheiros package.json.
 
-Out of all of the files, the .eleventy.js is the only one you need to worry about. Here, you will find the config files for the eleventy SSG. It is in this config file we can tell eleventy how to optimise our images, define where our components, data and layouts live, as well as determine what files make it into our production build.
+De todos os ficheiros, só precisa de se preocupar com o .eleventy.js. Aqui estão as configurações do Eleventy SSG. É neste ficheiro que pode dizer ao Eleventy como otimizar imagens, definir onde estão os componentes, dados e layouts, e também o que entra no build final.
 
-The gitignore keeps the node_modules and public folders out of the repo, as these are huge folders which serve no purpose to others. Speaking of, what are those other folders for?
+O gitignore mantém as pastas node_modules e public fora do repositório, pois são pastas grandes que não interessam a outros. Falando nisso, para que servem essas pastas?
 
 ### public vs src vs node_modules
-Out of these three folders, you only need to worry about one. The node_modules one contains all the dependencies and extra code needed for the website. The public folder contains the production-ready code for your website.
+Destas três pastas, só precisa de se preocupar com uma. A node_modules tem todas as dependências e código extra necessário para o site. A public tem o código pronto para produção do seu site.
 
-Both of these **should not be modified**. That only leaves the src folder for you to work in. There are loads of folders in there for you, as we'll explain below.
+Nenhuma destas deve ser modificada. Só precisa de trabalhar na pasta src. Aí tem tudo o que precisa para criar um ótimo site.
 
-### Source Folders
-You'll be working in the src folder with this project. In here is an organised system with everything you'll need to make an awesome website.
+### Pastas da Source
+Vai trabalhar na pasta src neste projeto. Aqui está tudo organizado para facilitar o seu trabalho.
 
-- **_data** - This is a global store for data that can be accessed from anywhere in the project. The kit ships with a client file, containing information about a potential client that you may be making a website for. This data can be accessed by using the filename as an object, then accessing the key/value pairs within. So in this case, if you wanted to inject the client name somewhere, you use `{{ client.name }}`.
-- **_includes and _layouts** - These two folders allow for some of the templating features within eleventy. Full page layout templates are stored in _layouts, and can be used in the 'layout' field within the frontmatter of your files. _includes contain the smaller, reusable components, such as the header or footer
-- **admin** - Configuration for the CMS. You can ignore the index.html file, but the config.yml file may be of interest for you. You can read more about this with the [Netlify Docs]()
-- **assets** - For all non-HTML/CSS related assets, such as SVGs, JavaScript and images you don't want to be optimised.
-- **blog** - All blog page markdown files are stored in here. Frontmatter for the blog post pages are stored in blog.json.
-- **CSS** - For this project, we use the LESS preprocessor. All LESS and CSS files are stored in here.
-- **images** - Images to be optimised are stored here, before getting transformed and spat out in the /public folder
-- **pages** - All non-home pages are kept here
+- **_data** - É um repositório global de dados acessível em todo o projeto. O kit traz um ficheiro client, com informação sobre um cliente potencial. Pode aceder a estes dados usando o nome do ficheiro como objeto, depois as chaves/valores. Por exemplo, para mostrar o nome do cliente: `{{ client.name }}`.
+- **_includes e _layouts** - Estas duas pastas permitem funcionalidades de template no Eleventy. Os layouts de página inteira estão em _layouts e podem ser usados no campo 'layout' do frontmatter. _includes tem componentes reutilizáveis, como o header ou footer.
+- **admin** - Configuração do CMS. Pode ignorar o index.html, mas o config.yml pode ser útil. Veja mais nos [Netlify Docs]().
+- **assets** - Para todos os assets que não sejam HTML/CSS, como SVGs, JavaScript e imagens que não quer otimizar.
+- **blog** - Todos os ficheiros markdown das páginas de blog estão aqui. O frontmatter dos posts está em blog.json.
+- **CSS** - Neste projeto usamos o pré-processador LESS. Todos os ficheiros LESS e CSS estão aqui.
+- **images** - Imagens a otimizar são guardadas aqui, antes de serem transformadas e enviadas para a pasta /public
+- **pages** - Todas as páginas que não são a home estão aqui
 
 #### src/images vs assets/images
-You may be wondering why there are two places to store images. This is to do with the eleventy image plugin. Images stored in src/images will be optimised and saved to the /public build folder, which includes a name change. assets/images contains images you don't want to be optimised by eleventy.
+Pode perguntar-se porque há dois sítios para imagens. Tem a ver com o plugin de imagens do Eleventy. Imagens em src/images são otimizadas e guardadas na pasta /public, com nome alterado. assets/images tem imagens que não quer otimizar.
 
-Because of how the build process works, and how the names of the image files change when being optimised, images from the CMS cannot be optimised with eleventy. On top of that, some images, like the logo, don't need to be resized or optimised, and thus can live here.
+Como o processo de build muda os nomes das imagens, imagens do CMS não podem ser otimizadas pelo Eleventy. Além disso, algumas imagens, como o logo, não precisam de ser redimensionadas ou otimizadas, por isso ficam aqui.
 
-# How it works under the hood:
+# Como funciona por trás
 <a name="#how-it-works" />
 
 https://youtu.be/UDU38awKQeg
 
-We have a base.html file that has all the code that will be repeated on every page, like the head tag and its meta data, navigation, footer, etc and we use template blocks (like little variables) to insert the content for each page's info into that base file. It loads the content, meta tag info, inserts any extra link tags or other tags that are unique to that page needed to display it properly (like individual page css files), and basically fills in the blanks on the base.html page template.
+Temos um ficheiro base.html com todo o código que se repete em todas as páginas, como o head, meta tags, navegação, footer, etc. Usamos blocos de template (como pequenas variáveis) para inserir o conteúdo de cada página nesse ficheiro base. Carrega o conteúdo, meta tags, insere links ou outros tags únicos de cada página (como CSS individual), e basicamente preenche os espaços em branco do template base.html.
 
-# Using the Kit
+# Como Usar o Kit
 <a name="#using-the-kit" />
 
-### Getting Started
+### Primeiros Passos
 <a name="#getting-started" />
-0. If this is your first time using this kit, I highly recommend you read [this article](https://www.hyunbinseo.medium.com/nunjucks-settings-for-vs-code-a0da0dc66b95) on setting up VSCode to use Nunjucks, the templating language for this kit. This will give you access to autoformatting, syntax highlighting and emmet. 
+0. Se é a primeira vez que usa este kit, recomendo que leia [este artigo](https://www.hyunbinseo.medium.com/nunjucks-settings-for-vs-code-a0da0dc66b95) sobre configurar o VSCode para Nunjucks, a linguagem de template deste kit. Vai ter acesso a autoformatação, realce de sintaxe e emmet.
 
-1. Clone the repository and save it to your computer and open it up in your code editor. We recommend Visual Studio.
-2. Once you open the project in your code editor, open up the terminal in your editor. On PC it's (CTRL + ~). Then on the line in the terminal window, type "npm install" to install all the node modules needed for it to work.
-3. once npm finished installing, type "npm start" to "turn on" the project and run the local server. A lot of text will show up and at the bottom there will be "Local: http://localhost:8080". Hold CTRL (on PC at least) and click on the "http://localhost:8080" to open the project in your browser. Any changes saved will update live on that link.
-4. Now you're ready to start editing the kit to your needs. You can use the prebuilt template or add your own files to it, or delete them all and start fresh inside the kit.
+1. Clone o repositório, guarde no seu computador e abra-o no seu editor de código. Recomendamos o Visual Studio.
+2. Depois de abrir o projeto, abra o terminal no editor. No PC é (CTRL + ~). Depois escreva "npm install" para instalar os módulos necessários.
+3. Quando o npm terminar, escreva "npm start" para ligar o projeto e correr o servidor local. Vai aparecer muito texto e no fim verá "Local: http://localhost:8080". Carregue em CTRL e clique no link para abrir o projeto no browser. Quaisquer alterações guardadas vão atualizar em tempo real nesse link.
+4. Agora está pronto para começar a editar o kit. Pode usar o template pré-feito, adicionar ficheiros ou começar do zero dentro do kit.
 
-If you close the project and open it back up at a later date, you will need to open the terminal and run "npm start" again to start the server and compile your code for you. Then click the localhost link to open it in a new tab again like before. You have to do this every time you close and reopen a project built with this kit. If there's any errors, it will show up here too and point you in the direction to fix.
+Se fechar o projeto e o voltar a abrir mais tarde, tem de abrir o terminal e correr "npm start" outra vez para iniciar o servidor e compilar o código. Depois clique no link do localhost para abrir de novo. Tem de fazer isto sempre que fechar e reabrir um projeto feito com este kit. Se houver erros, aparecem aqui e indicam onde corrigir.
 
-### Setting up Eleventy
+### Configurar o Eleventy
 <a name="#setting-up-eleventy" />
-Before you get stuck into the HTML and CSS, it's best to make the changes to the SSG config now. If you go into /.eleventy.js, you'll see a long, slightly scary looking config file. There are a couple of things you need to change here, as hinted by the comment at the top.
+Antes de mexer no HTML e CSS, é melhor fazer já as alterações à configuração do SSG. Se abrir o /.eleventy.js, vai ver um ficheiro de configuração longo. Há algumas coisas a mudar, como indicado no comentário no topo.
 
-The first thing to change is the default media queries in the imageShortcode function. On line 9, you should see a line that looks like this
+A primeira coisa a mudar são as media queries por defeito na função imageShortcode. Na linha 9, deve ver algo assim:
 
 `async function imageShortcode(src, alt, className, loading, sizes = '(max-width: 600px) 400px, 850px')`
 
-The part which says `sizes = '(max-width: 600px) 400px, 850px` is the part you have to change. This is saying "on devices up to a width of 600px, render the 400px version of the image, while on larger devices, use the 850px image".
+A parte que diz `sizes = '(max-width: 600px) 400px, 850px` é a que deve mudar. Isto diz "em dispositivos até 600px de largura, usa a imagem de 400px, em dispositivos maiores usa a de 850px".
 
-On this website, most images on mobile widths are 400px wide, while the desktop images are around 850px wide. Based on your design, this may change. If so, change the media query to reflect this. This can be overwritten when using the shortcode, but to save yourself time, it's worth setting the default up.
+Neste site, a maioria das imagens em mobile tem 400px de largura, e no desktop cerca de 850px. Dependendo do seu design, pode mudar isto. Pode ser sobrescrito ao usar o shortcode, mas para poupar tempo, vale a pena definir já o valor por defeito.
 
-The second thing to change is the array of widths you want the SSG to produce, on line 17. By default, this is set up to 200px, 400px, 850px, 1920px and 2500px. Note that the image widths in the media query all appear here. When you call the media query, you need to make sure that the width of the image you want is listed in the image widths.
+A segunda coisa a mudar é o array de larguras que o SSG vai produzir, na linha 17. Por defeito, está definido para 200px, 400px, 850px, 1920px e 2500px. Note que as larguras das media queries têm de aparecer aqui. Quando chama a media query, tem de garantir que a largura da imagem que quer está nesta lista.
 
-If you would to read more about the eleventy image plugin, you can do so using the [eleventy image docs](https://www.11ty.dev/docs/plugins/image/)
+Se quiser saber mais sobre o plugin de imagens do Eleventy, veja os [eleventy image docs](https://www.11ty.dev/docs/plugins/image/)
 
-### Setting up data
-The next step is to go into /src/_data/client.json, and replace the default values with the applicable ones for your project. The changes will instantly be reflected across the site.
+### Configurar dados
+O próximo passo é ir a /src/_data/client.json e substituir os valores por defeito pelos do seu projeto. As alterações são refletidas instantaneamente em todo o site.
 
-If there are any sets of related or repeated data during the development of the website, consider making a new file in the _data folder, to keep data centralised. This keeps your code easy to maintain. A good example would be a menu - you could have menu data in a menu.json folder, then use a [nunjucks for loop](https://mozilla.github.io/nunjucks/templating.html#for) to iterate over the menu items. Then if the client requests a price update, you know exactly where to look.
+Se houver conjuntos de dados relacionados ou repetidos durante o desenvolvimento, considere criar um novo ficheiro na pasta _data, para manter os dados centralizados. Assim o seu código fica fácil de manter. Um bom exemplo seria um menu - pode ter os dados do menu num ficheiro menu.json, depois usar um [nunjucks for loop](https://mozilla.github.io/nunjucks/templating.html#for) para iterar pelos itens do menu. Se o cliente pedir uma alteração de preço, já sabe onde procurar.
 
-### Layouts and Components
-As mentioned in the File Structure section, there are folders to keep your layouts and components in order. All pages pull from the base.html file in _layouts. This contains the head, header, footer and a main tag where the page content is inserted. The header and footer themselves are componenets found in _includes.
+### Layouts e Componentes
+Como referido na secção Estrutura de Ficheiros, há pastas para manter layouts e componentes organizados. Todas as páginas usam o ficheiro base.html em _layouts. Este contém o head, header, footer e uma tag main onde o conteúdo da página é inserido. O header e footer são componentes em _includes.
 
-Most of the <head> will be completed for you by filling out the frontmatter of each page (next section), but some things, like favicons and font preloads, will need to be manually adjusted.
+Grande parte do <head> é preenchida automaticamente ao completar o frontmatter de cada página (próxima secção), mas algumas coisas, como favicons e preloads de fontes, têm de ser ajustadas manualmente.
 
-The title tag is also preconfigured, giving an SEO optimised title for each page. Home page and interior page titles are treated differently, but this can all be changed in base.html
+A tag title também já está pré-configurada, dando um título otimizado para SEO a cada página. O título da home e das páginas interiores é tratado de forma diferente, mas pode ser alterado em base.html
 
-### Adding a new page
+### Adicionar uma nova página
 
-All new pages need to be added to the /pages folder. If you are moving an existing website to this kit, all your website's old pages need to be added to this folder. All of them!
+Todas as novas páginas devem ser adicionadas à pasta /pages. Se está a migrar um site antigo para este kit, todas as páginas antigas devem ser adicionadas aqui. Todas!
 
-In the \pages folder there’s a .txt document labeled "_new-page-template". It has the following code inside of it:
+Na pasta \pages há um ficheiro .txt chamado "_new-page-template". Tem o seguinte código:
 
 ```
 ---
@@ -145,53 +144,53 @@ eleventyNavigation:
 <!-- Enter html code below -->
 ```
 
-We laid out all the front matter and its variables with labels for you, so you know what goes where and what to edit. Below the "Enter html code here" comment is where you start writing the html for that page. We don't need to include the header or footer, just the unique html for this page. Fill out the frontmatter with the appropriate information, making sure to keep the same format of paths as the .txt file says
+Colocámos todo o front matter e variáveis com etiquetas para saber o que é cada coisa. Abaixo do comentário "Enter html code here" é onde começa a escrever o html dessa página. Não precisa de incluir o header ou footer, só o html único dessa página. Preencha o frontmatter com a informação correta, mantendo o formato dos paths como no .txt
 
-If you are adding an existing page to this kit, all you do is create a new html file and paste the content of the new-page-template.txt to the top of that file, and copy all the content between the `<main></main>` tags of your site below the line that says "<!-- Enter html code below -->". If for some reason you didn't use a `<main></main>` tag in your site, just copy and paste everything of that page between the navigation and the footer and paste it below the comment line.
+Se está a adicionar uma página antiga, basta criar um novo ficheiro html, colar o conteúdo do new-page-template.txt no topo e copiar o conteúdo entre as tags <main></main> do site antigo para baixo da linha "<!-- Enter html code below -->". Se não usou <main></main>, copie tudo entre a navegação e o footer e cole abaixo do comentário.
 
-The permalink is the actual slug name of the page that will show up in the URL. This will be www.website/page for example.
+O permalink é o nome do slug da página que aparece no URL. Por exemplo, será www.website/page.
 
-Also, DON'T include the `<main></main>` tags on the page. They are already on the base.html file in the /includes folder. The system will insert the contents of the page inside the `<main></main>` tags on that page. So they are not needed on your new page files.
+Também, NÃO inclua as tags <main></main> na página. Já estão no ficheiro base.html em /includes. O sistema insere o conteúdo da página dentro das <main></main> do base.html. Por isso não são necessárias nas novas páginas.
 
-### How to use Navigation
-With the eleventy navigation plugin, you have access to an easy, scalable way to design a navigation. In the frontmatter, you can the data under eleventyNavigation is what controls the nav. The key is what name will be rendered on the navigation, while the order determines, well, what order the pages will appear, from smallest to largest.
+### Como usar a Navegação
+Com o plugin eleventy navigation, tem uma forma fácil e escalável de criar navegação. No frontmatter, os dados em eleventyNavigation controlam o menu. A key é o nome que aparece na navegação, a order define a ordem dos links, do menor para o maior.
 
-If you don't want a page to be linked on the navigation, just leave the eleventyNavigation part of the frontmatter out.
+Se não quiser que uma página apareça na navegação, basta não incluir a parte eleventyNavigation no frontmatter.
 
-### Optimising Images
-Whenever you want to use an image, don't do it how you normally would, when using the template. Instead, use the below shortcode. Replace the capital letters with what you want, keeping the quotations
+### Otimizar Imagens
+Sempre que quiser usar uma imagem, não faça como normalmente faria. Use o shortcode abaixo. Substitua as maiúsculas pelo que pretende, mantendo as aspas:
 
 `{% image 'DIRECT IMAGE PATH', 'ALT TEXT', 'PICTURE ELEMENT CLASS', 'LAZY/EAGER LOADING', 'IMG MEDIA QUERY'%}`
 
-An example of this shortcode in use would be this
+Exemplo:
 `{% image './src/images/portfolio/port1.jpg', 'new hallway', 'cs-picture cs-picture-1', 'lazy', '(max-width: 600px) 200px, 400px'%}`
 
-A couple things to note:
-1. The image path need to be in the given format above, prefixing with ./src.
-2. You need to include all information, except for the image media query. If you leave the media query, it will default to the one set in your .eleventy.js
+Algumas notas:
+1. O caminho da imagem tem de estar no formato acima, começando por ./src.
+2. Tem de incluir toda a informação, exceto a media query da imagem. Se não indicar, usa o valor por defeito do .eleventy.js
 
-#### Linking to images elsewhere
-There may be a case where you need to use an image or image source without using the shortcode. For example, as a CSS background-image or in the preload section of the frontmatter. For this, it's important to know what happens when you call a shortcode.
+#### Ligar a imagens noutros sítios
+Pode haver casos em que precisa de usar uma imagem sem o shortcode. Por exemplo, como background-image em CSS ou no preload do frontmatter. Para isso, é importante saber o que acontece ao usar o shortcode.
 
-The image gets moved into /public/images, and is renamed. In the .eleventy.js file, the name structure is given as `{name}-{width}w.{format}`. So a 400px wide jpg originally called picture.jpg will be returned as picture-400w.jpg. It is that which you use in your URLs. So, when linking to an image as a CSS background image, you should use `background-image: url(/images/picture-400w.jpg)`.
+A imagem é movida para /public/images e renomeada. No .eleventy.js, a estrutura do nome é `{name}-{width}w.{format}`. Por exemplo, uma imagem de 400px chamada picture.jpg passa a ser picture-400w.jpg. É esse nome que deve usar nos URLs. Assim, para usar uma imagem como background em CSS, use `background-image: url(/images/picture-400w.jpg)`.
 
-# How to convert a static HTML and CSS site into the new system:
+# Como converter um site estático HTML e CSS para o novo sistema:
 <a name="#converting-a-static-site" />
 https://youtu.be/v6LaVds4yeU
 <br>
-In this video above, I show you how to take a real life project of mine that needs to move the blog over to the Eleventy + Netlify CMS blog system. I go over how to transfer static html and css files into the Eleventy Static Site Generator, break up the header and footer into reusable components to add on all pages, creating a base file, adding the old pages, and adding the old blog entries.
+No vídeo acima, mostro como transferir um projeto real que precisa de migrar o blog para o sistema Eleventy + Netlify CMS. Explico como transferir ficheiros html e css estáticos para o Eleventy Static Site Generator, separar o header e footer em componentes reutilizáveis para adicionar a todas as páginas, criar um ficheiro base, adicionar as páginas antigas e os antigos posts do blog.
 
-Then I show you how to connect it to netlify and enable the CMS in a few clicks and push everything live and use it. Once you do this a few times for clients, it starts to become muscle memory and it flies by. Originally this took me two hours to do, and it dropped to 40 minutes in this video. This could probably be done in less than 30 minutes with a simple site and getting used to the process.
+Depois mostro como ligar ao Netlify e ativar o CMS em poucos cliques, publicar tudo e usar. Depois de fazer isto algumas vezes para clientes, torna-se rotina e faz-se rapidamente. Originalmente demorava duas horas, mas neste vídeo consegui em 40 minutos. Com um site simples e prática, pode demorar menos de 30 minutos.
 
-### Move over all assets
+### Mover todos os assets
 
-Move images you would like to be optimised into the /images folder. The other assets belong in /assets, including unoptimised images. Then, you will have to go through and replace all images with the {% image ... %} shortcode. This is still quicker than manually optimising the images, however!
+Coloque as imagens que quer otimizar na pasta /images. Os outros assets ficam em /assets, incluindo imagens não otimizadas. Depois, tem de substituir todas as imagens pelo shortcode {% image ... %}. Isto é mais rápido do que otimizar manualmente as imagens!
 
-### Separating the header and footer sections
+### Separar as secções de header e footer
 
-If you're trying to move over a current website to this kit, go in the \_includes folder and there is a header.html and a footer.html, and all you have to do is copy and paste all the html needed for your header into the header.html file and add all the footer code to the footer.html file.
+Se está a migrar um site atual para este kit, vá à pasta \_includes onde existe um ficheiro header.html e um footer.html. Basta copiar e colar o html necessário para o header no ficheiro header.html e o código do footer no ficheiro footer.html.
 
-However, how do we set dynamic active states to show which page you're on? Here's the code
+Como definir o estado ativo dinâmico para mostrar em que página está? Eis o código:
 
 ```
 <!--Main Nav-->
@@ -207,25 +206,25 @@ However, how do we set dynamic active states to show which page you're on? Here'
 </nav>
 ```
 
-We add this code `{{ 'active' if '' == page.url }}` to each link tag and fill in the empty quotes after the "if" with the page slug. For example, on the about page link, it's saying "add a class of "active" to this a tag if the text between these quotes is an exact match for the page slug name." In this case the slugs name is /about. So when you're on the about page, page.fileSlug = about, which matches exactly with the "about" string it's being matched to. This evaluates to true, so a class of .active gets added to the a tag and the styles associated with that tag having that class will be rendered. When you copy and paste your header into this file to override the default one we have in there, copy and paste that code in a seperate file and grab it once you added your header file and paste it inside the class="" quotes where you want the active class to be added when we're on that page.
+Adicionamos este código `{{ 'active' if '' == page.url }}` a cada link e preenchemos as aspas com o slug da página. Por exemplo, no link da página about, diz "adiciona a classe 'active' a esta tag se o texto entre aspas for igual ao slug da página". Neste caso, o slug é /about. Assim, quando está na página about, page.fileSlug = about, que corresponde ao texto "about". Isto avalia como verdadeiro e a classe .active é adicionada ao link, aplicando o estilo correspondente. Quando copiar o seu header para este ficheiro, copie também este código e coloque-o nas class="" dos links onde quer o estado ativo.
 
-On the home page we leave the string empty. Because when we're on the home page, there is no /fileSlug. It's just /. There's nothing. So on that home link, we're saying "if there's no file slug, add the active class to this tag".
+Na home page, deixamos a string vazia. Porque na home não há fileSlug, é só /. Por isso, no link da home, dizemos "se não houver file slug, adiciona a classe active".
 
-Once you do this, you never have to touch them again unless you need to make an edit. They will be rendered on all pages. So on your about.html document, you don't need to add them in there. Just write your html for that page under the line that says "`<!-- Enter html code below -->`". Eleventy will handle everything else. It will build the page for you with the header and footer.
+Depois disto, não precisa de voltar a mexer, a não ser que queira editar. Vai aparecer em todas as páginas. Por isso, no about.html, não precisa de adicionar nada, só escrever o html único dessa página abaixo da linha "<!-- Enter html code below -->". O Eleventy trata do resto, construindo a página com header e footer.
 
-### Converting old file paths to the new ones, remove .html extension from all links
+### Converter caminhos antigos e remover .html dos links
 
-If you copy and pasted a previous site's html over to a new page in the kit, do a CTRL + F and find all instances of your image file path and replace it with /assets/images/. For example, when I moved over an old site to the kit, all my image tag source paths were /images/image.jpg. In this new kit, all images are inside the /assets/images file path. So I copy and paste "/images and replace it with "/assets/images - and yes that quote is supposed to be there. It makes sure I'm grabbing only the file paths that start with /images because all file path that start with /images happen to be right next to the open quote of the source quotes. like src="/images/image.jpg". If I only did a find a replace for /images I could potentially grab a file path I don't want to replace. Like if I already had a /assets/images/image.jpg on the page, if I did a find a replace for /images and replace it with /assets/images, it'd replace the /images in the middle of that path and it'd turn into /assets/assets/images/image.jpg - not what I wanted. So it's a little more strategic find and replace method.
+Se copiou o html de um site antigo para uma nova página no kit, faça CTRL + F e substitua todos os caminhos de imagens por /assets/images/. Por exemplo, se os caminhos eram /images/image.jpg, agora devem ser /assets/images/image.jpg. Assim garante que só substitui os caminhos certos e não altera outros por engano.
 
-You may ask - what is the reason why we use "/assets/images" when referencing images? Well, remember at the top of the README it's mentioned that /public is where your code is built to, and is where Netlify loads the website from. The leading / at the start tells Netlify to ALWAYS look from the root of the project. Not using that first / will cause Netlify to look at the folder the page is in, and not the root.
+Porque usamos "/assets/images"? No início do README é referido que /public é onde o código é compilado e de onde o Netlify serve o site. O / no início diz ao Netlify para procurar sempre a partir da raiz do projeto. Se não usar o /, o Netlify procura na pasta da página, não na raiz.
 
-Then make sure ALL the links in the html have the .html extension removed. Eleventy doesn't recognize it. /contact.html should be changed to /contact. I also do a find and replace for .html, but make sure you check the top of your page front matter and double check the base.html still has its extension. If it got removed from the find and replace, put it back!
+Depois, certifique-se que todos os links no html não têm a extensão .html. O Eleventy não reconhece. Por exemplo, /contact.html deve ser /contact. Faça também um substituir por .html, mas confirme que o front matter e o base.html mantêm a extensão correta. Se for removida por engano, volte a pôr.
 
-If you're ever unsure about file paths, it won't hurt to look in the public folder, and work your way through the folder tree in there (just don't accidently change anything in there - you'll lose all changes on the next build!). 11ty works on a folder-based file system. /contact points to the contact folder, and Netlify will load the index.html in there when you go to www.website.com/contact. This is why we don't use .html in the folders.
+Se tiver dúvidas sobre caminhos, pode ver na pasta public e seguir a estrutura (mas não altere nada aí, pois perde as alterações no próximo build!). O 11ty usa um sistema de pastas. /contact aponta para a pasta contact e o Netlify carrega o index.html dessa pasta quando acede a www.website.com/contact. Por isso não usamos .html nos links.
 
-### Keeping the same file paths:
+### Manter os mesmos caminhos
 
-If you have file paths you don't want to change to maintain SEO, for example /pearland/pearland-piano-lessons, simply change the permalink for that page to that file path in the front matter of that page.
+Se tem caminhos que não quer mudar para manter o SEO, por exemplo /pearland/pearland-piano-lessons, basta mudar o permalink dessa página no front matter para esse caminho.
 
 ```
 ---
@@ -243,13 +242,13 @@ eleventyNavigation:
 <!-- Enter html code below -->
 ```
 
-Normally, we set our permalink to be the page slug (pearland-piano-lessons/) but if they have a unique file path all you have to do is include it in the permalink. No slashes before the slug name, only 1 slash after as seen in the example above.
+Normalmente, o permalink é o slug da página (pearland-piano-lessons/), mas se quiser um caminho único, basta pô-lo no permalink. Não ponha barras antes do nome, só uma barra depois, como no exemplo.
 
 # Blog
 <a name="#blog" />
-### Adding a new blog post or adding an old one to the new kit
+### Adicionar um novo post ou migrar um antigo para o novo kit
 
-In the /blog folder there is a markdown file called "blog-template.md". This is what you'll use to create new blogs. It has its own blog specific front matter:
+Na pasta /blog há um ficheiro markdown chamado "blog-template.md". É este que usa para criar novos posts. Tem o seu próprio front matter:
 
 ```
 ---
@@ -268,7 +267,7 @@ imageAlt: Kitchen
 ---
 ```
 
-All of these are attached to a corresponding config.yml file in the /admin folder where we configure the inputs for the CMS that the client has access to when creating a blog.
+Tudo isto está ligado ao ficheiro config.yml na pasta /admin, onde configuramos os campos do CMS que o cliente pode preencher ao criar um blog.
 
 ```
 collections:
@@ -290,25 +289,25 @@ collections:
       - { label: 'Body', name: 'body', widget: 'markdown' }
 ```
 
-Notice how to front matter variable names matches the "name:" value for each label. This is where we configured all the input options for the client when they create a new blog.
+Repare que os nomes das variáveis do front matter correspondem ao "name:" de cada campo. É aqui que configuramos as opções de input para o cliente criar um blog.
 
-Those front matter variables in the blog-template.md connect to this configuration. So if you need to add a new blog post manually, you can copy and paste this page and create a new one, fill in the new info and right underneath it you can copy and paste the blog content in markdown format or write a new one in markdown format.
+Essas variáveis do front matter em blog-template.md ligam-se a esta configuração. Se quiser adicionar um post manualmente, pode copiar este ficheiro, criar um novo, preencher os campos e colar o conteúdo do blog em markdown por baixo, ou escrever um novo em markdown.
 
-We added a 'Page-Name-with-dashes-only' input field because many SEO and marketing agencies like to choose their file slugs as well as the meta tags for description and title tag. So we made it so they have control over every aspect of the blog's meta data.
+Adicionámos o campo 'Page-Name-with-dashes-only' porque muitas agências de SEO e marketing gostam de escolher o slug e as meta tags. Assim, têm controlo total sobre os dados do blog.
 
-### Moving over an old blog post to the new blog
+### Migrar um post antigo para o novo blog
 
-All you have to do is duplicate the blog-template.md and create a new markdown file that is titled with the same title as the current blog's slug name. So if your blog page file slug is "how-to-do-something.html" you just save the new markdown file in the /blog folder as "how-to-do-something.md". Then fill in the info for the front matter variables. I just copy and paste the info from the old site. The pageName variable will be whatever the file path should be. So if your blog post was /blog/how-to-do-something you should make the pageName "blog/how-to-do-something". This preserves the SEO of that link and doesn't create a 404 for the old one if you just had it as "how-to-do-something".
+Só tem de duplicar o blog-template.md e criar um novo ficheiro markdown com o mesmo nome do slug do blog antigo. Por exemplo, se o slug era "how-to-do-something.html", guarde o novo ficheiro como "how-to-do-something.md" na pasta /blog. Depois preencha o front matter. O pageName será o caminho do post, por exemplo "blog/how-to-do-something". Assim mantém o SEO e evita 404.
 
-Also, no slashes after the name either. It's not the same variable as the permalink variable in the new-page-template.txt. It's just text and dashes.
+Não ponha barras depois do nome. Não é igual ao permalink do new-page-template.txt, é só texto e traços.
 
-Once you filled in all the fields, you can start transferring your content to the new page. If you have the HTML for the page, you can just copy everything and run it through an html to markdown converter here: https://www.browserling.com/tools/html-to-markdown and then just copy and paste that markdown below the variables code block. Otherwise you'll just have to copy and paste the actual rich text and manually change everything to markdown format. Personally I just grab the HTML and run it through the markdown converter. Can't have divs or anything. Just straight text tags. If you have content wrapped in divs or images in divs, it won't work. You need to remove them, convert, and paste that markdown into the new blog post file. Then save and you're done. In our blog.css we have everything styled for you. So if you add an image or any heading tags or lists, they all will be styled by our css. We did everything for you!
+Depois de preencher tudo, pode transferir o conteúdo. Se tiver o HTML, pode convertê-lo para markdown aqui: https://www.browserling.com/tools/html-to-markdown e colar o markdown abaixo das variáveis. Ou pode copiar o texto e converter manualmente para markdown. O ideal é converter o HTML, pois não pode ter divs, só tags de texto. Se tiver divs, remova, converta e cole o markdown no novo ficheiro. Depois é só guardar. O blog.css já tem tudo estilizado, por isso imagens, headings e listas ficam logo com bom aspeto.
 
-Once pushed to the server, the client will also have edit access to these manually entered blog posts.
+Depois de publicar, o cliente pode editar estes posts manualmente no CMS.
 
-### Adding featured blog posts
+### Adicionar posts em destaque
 
-Adding and swapping out featured blog posts is easy. In the markdown variables, there's a variable for tags.
+Adicionar e trocar posts em destaque é fácil. No front matter do markdown, há uma variável para tags.
 
 ```
 ---
@@ -324,21 +323,21 @@ tags:
 image: /assets/images/cabinets2-m.jpg
 imageAlt: Solar Panels
 ---
-His etudes and concertos are performed by the world’s leading pianists, and they are famed for their difficulty. Not to mention the International Chopin Piano Competition, an annual affair in Warsaw that springboards the careers of many famous pianists.
+His etudes and concertos are performed by the world's leading pianists, and they are famed for their difficulty. Not to mention the International Chopin Piano Competition, an annual affair in Warsaw that springboards the careers of many famous pianists.
 ```
 
-The "-featured" is the tag a blog post needs to be filtered into the featured section. If you're adding blog posts from a previous site and wanted that one to be featured, you'd just drop to a second line under "-post" and add "-featured". Done. When the client wants to swap them out, in their CMS they have a "tags" input box. All they have to do is remove the "featured" tag to remove it, and go into the blog post they want to feature and after the "post" they add a comma and type "featured". No space. The CMS adds a space for them. So they literally just hit the comma and type "featured" and save. It's now in the featured spot and they didn't have to do any coding.
+A tag "-featured" é o que faz com que um post apareça na secção de destaque. Se está a migrar posts antigos e quer que um seja destacado, basta adicionar "-featured" na linha abaixo de "-post". Quando o cliente quiser trocar, no CMS tem uma caixa de input para as tags. Só tem de remover "featured" para deixar de ser destaque, ou adicionar "featured" ao post que quer destacar. O CMS trata do resto, basta guardar.
 
-### Remove blog-template.md after you're finished and are ready to push all your changes.
+### Remover o ficheiro blog-template.md depois de terminar e antes de publicar as alterações.
 
-If you don't it will show up as a blog post in the CMS and website. Once the blog is done and everything is moved over ou can delete the template file. You won't need it anymore since the client will now be adding blog posts themselves in the CMS.
+Se não o remover, ele aparece como post no CMS e no site. Quando terminar de migrar ou criar os posts, pode apagar o ficheiro template. Não vai precisar dele, pois o cliente vai passar a criar posts pelo CMS.
 
-If you are not moving over old blog posts, you can delete it as well before it goes live. We have default text that shows up saying theres no blog posts yet on the site. Once the client adds a blog they are removed and load the new blog post.
+Se não vai migrar posts antigos, pode apagar o ficheiro antes de publicar. O site tem texto por defeito a dizer que ainda não há posts. Assim que o cliente criar um post, esse texto desaparece.
 
-### CMS Modification
-In the /admin folder there is a config.yml file, controlling the CMS. Most of it is already set up for you, assuming you just want a blog. You can read more about the [capabilites of the CMS here](https://www.netlifycms.org/docs/intro/)
+### Modificar o CMS
+Na pasta /admin está o ficheiro config.yml, que controla o CMS. Está praticamente tudo configurado, assumindo que só quer um blog. Pode saber mais sobre as capacidades do CMS aqui: [Netlify CMS Docs](https://www.netlifycms.org/docs/intro/)
 
-One thing you may want to do though, is change the logo of the CMS, for a more personable experience. Open config.yml, and find the following code
+Se quiser, pode mudar o logo do CMS para personalizar. Abra o config.yml e procure:
 
 ```
 local_backend: true
@@ -346,21 +345,21 @@ local_backend: true
 logo_url: https://d33wubrfki0l68.cloudfront.net/c89899bad974606ce0e0f5d5a95842dc787dcb56/7fe98/assets/images/logo-blue.png
 ```
 
-Change the logo URL to the URL of your clients logo. It won't take an image file path. Open your client's website and inspect the code, click on the logo, hover over it's link in the html in the dev tools, and click the live link to open the image in a new tab. Copy and paste that link and replace the one that's in front of the "logo_url:". When the client logs into the Netlify CMS it will show up above the login button.
+Mude o logo_url para o URL do logo do cliente. Não aceita paths de ficheiros, só URLs. Abra o site do cliente, inspecione o logo, abra o link da imagem numa nova aba e copie o URL para substituir no config.yml. Assim, quando o cliente entrar no CMS, vê o logo personalizado.
 
-### Testing the CMS
+### Testar o CMS
 
-Once all blog posts (if needed) have been added or transferred over, it's worth a quick test to make sure it is ready to go live. In the top right of the terminal, there should be an icon that looks like two rectangles joined. This is the split terminal button. Click that, and you should get a side-by-side of two terminal views. In one, your dev server should be running off `npm start`. In the other, run the command `npx netlify-cms-proxy-server`. This runs a dev server for the Netlify CMS, allowing you to access it by going to localhost:8080/admin - much like you would if the website was live.
+Depois de migrar ou criar os posts, vale a pena testar antes de publicar. No terminal, pode abrir uma nova janela (ícone de dois retângulos no topo direito). Numa janela, mantenha o servidor dev a correr com `npm start`. Na outra, corra `npx netlify-cms-proxy-server`. Isto corre um servidor dev para o Netlify CMS, acessível em localhost:8080/admin, tal como se estivesse online.
 
-If you get any errors, the most common reason is because the port 8081 is used. The CMS server runs off this port (although you can only access it with localhost:8080/admin), and won't try another port if that is taken. Make sure that port isn't taken by another server running and try again.
+Se aparecerem erros, o mais comum é o porto 8081 estar ocupado. O CMS usa esse porto e não tenta outro. Certifique-se que não há outro servidor a usar o 8081 e tente de novo.
 
-# Things to do before deployment
+# Coisas a fazer antes de publicar
 <a name="#pre-deployment-things" />
-### Adding the sitemap
+### Adicionar o sitemap
 
-If you need to create a sitemap, use this tool to do so and download the file: https://www.xml-sitemaps.com/
+Se precisar de criar um sitemap, use esta ferramenta: https://www.xml-sitemaps.com/
 
-To add this sitemap to the Eleventy system, you need to create a sitemap.njk file in the /src directory.  At the top of the file, add the permalink front matter to tell it the URL for this page:
+Para adicionar o sitemap ao Eleventy, crie um ficheiro sitemap.njk na pasta /src. No topo do ficheiro, adicione o front matter para definir o URL:
 
 ```
 ---
@@ -369,7 +368,7 @@ eleventyExcludeFromCollections: true
 ---
 ```
 
-Then copy and paste the sitemap code below the front matter. NO SPACE BETWEEN THE FRONT MATTER AND STEMAP CODE. This will throw up an error "errors: error on line 2 at column 6: XML declaration allowed only at the start of the document". There can be no spaces at the top of a sitemap.xml file.  The front matter is removed when compiled and the sitemap code moves up to the top where it's supposed to be.  So when you copy and paste your sitemap code below the front matter, make sure there's no gap between it and the "---" bottom line. Like so:
+Depois, cole o código do sitemap logo abaixo do front matter. NÃO DEIXE ESPAÇOS entre o front matter e o código do sitemap, senão dá erro "XML declaration allowed only at the start of the document". O front matter é removido na build e o código do sitemap fica no topo. Por isso, não deixe linhas em branco.
 
 ```
 ---
@@ -385,42 +384,42 @@ eleventyExcludeFromCollections: true
 <url>
 ```
 
-### Adding robots.txt
+### Adicionar robots.txt
 
-We added a passthrough in the eleventy.js file that makes the robots.txt file usable inside the /src folder.  So when you need to create a new one or move an old one over, place it in the /src folder and it will work.
+Já existe um passthrough no ficheiro eleventy.js que permite usar o robots.txt dentro da pasta /src. Por isso, para criar ou migrar um robots.txt, basta colocá-lo na pasta /src.
 
-Make sure you add ```Disallow: /admin/``` in your robots.txt just below the ```User-agent: *``` at the top.  This will keep the /admin folder from being indexed on google. We don't want it indexed, it has no SEO value and will probably hurt your sites ranking because of it.  We've included a robots.txt file with this anyway as default. So all you have to do is add any other data that needs to be added. 
+Certifique-se de adicionar ```Disallow: /admin/``` logo abaixo de ```User-agent: *```. Isto impede que a pasta /admin seja indexada pelo Google, o que é importante para SEO. O ficheiro robots.txt já está incluído por defeito, só tem de adicionar o que for necessário.
 
-Also **Add your sitemap URL to the robots.txt file**.  In the robots.txt file, theres a line that says ```Sitemap: https://www.yourwebsite/sitemap.xml```. Change the "https://www.yourwebsite" to the URL of your client's site and save and you're done. 
+**Adicione também o URL do sitemap ao robots.txt**. No ficheiro, há uma linha ```Sitemap: https://www.yourwebsite/sitemap.xml```. Troque "https://www.yourwebsite" pelo URL do site do cliente e guarde.
 
-### Adding a _redirects file with Netlify
+### Adicionar ficheiro _redirects para o Netlify
 
-If you need to add a redirects file, the way it works for Netlify is you create a _redirects file with no file extension.  When you save it, you have the option to select the file type, just scroll all the way down and "no extension" will be at the bottom usually.  Save it to your /src directory. We included a blank _redirects file in the kit for you.  We also added a passthough in the eleventy.js file so it gets picked up by the system.  
+Se precisar de redirecionamentos, crie um ficheiro _redirects (sem extensão) e coloque-o na pasta /src. Já existe um ficheiro em branco incluído no kit e o passthrough está configurado.
 
-To add a redirect, add the file slug of the old domain on the left and the file slug of the new one to the right of that. Like this:
+Para adicionar um redirecionamento, ponha o slug antigo à esquerda e o novo à direita:
 
 ```
 /old-page /new-page
 ```
 
-And now that /old-page link will redirect to the /new-page.
+Assim, o link /old-page redireciona para /new-page.
 
-### Adding the github to Netlify **IMPORTANT**
+### Ligar o GitHub ao Netlify **IMPORTANTE**
 
-Normally, this is pretty straightforward. But there's a slight difference when using this kit. Once you get to step 3 of "Import an existing project from a Git repository", at the bottom there’s a box for "publish directory". Sometimes it populates with "\_site", sometimes it has nothing. Make sure you change it to "public". If you don't do this it won't work.
+Normalmente é simples, mas neste kit há uma diferença. Ao importar o projeto do GitHub para o Netlify, no passo 3, há uma caixa "publish directory". Às vezes aparece "_site", outras vezes está vazia. Mude para "public". Se não fizer isto, não funciona.
 https://youtu.be/v6LaVds4yeU?t=3181
 
-### Connecting the blog to Netlify
+### Ligar o blog ao Netlify
 
-Video showing how to do it:
+Vídeo de como fazer:
 https://youtu.be/v6LaVds4yeU?t=3361
 
-Setup up is easy.
+A configuração é fácil:
 
-1. Once you connected the github for your site to Netlify and add any custom domains, in the top nav you click on "Identity".
-2. Click "Enable Identity"
-3. Invite yourself and your client to the site
-4. While in the Identity tab, click the "Settings and usage" button to open the settings options
-5. Find "registration preferences" and click "edit settings" and set registration from public to invite only
-6. Find "enable providers" and add a provider. I choose Google so the client can login with google in 1 click.
-7. Find "Git Gateway" and enable it
+1. Depois de ligar o GitHub ao Netlify e adicionar domínios, clique em "Identity" no topo.
+2. Clique em "Enable Identity"
+3. Convide-se a si e ao cliente para o site
+4. Em "Identity", clique em "Settings and usage"
+5. Em "registration preferences", clique em "edit settings" e mude de público para só por convite
+6. Em "enable providers", adicione um fornecedor (por exemplo, Google para login rápido)
+7. Ative o "Git Gateway"
